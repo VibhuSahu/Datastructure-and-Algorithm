@@ -74,6 +74,76 @@ Big O Notation is a mathematical way to describe the **performance** of an algor
 - Use **Hash Tables, Sets** for fast lookup (O(1) or O(log n) time).
 - Avoid **nested loops** unless necessary — they often lead to O(n²) time.
 
+<br/>
+
+# 📊 Understanding the Graph in the Image
+
+<p align="center">
+  <img src="./assests/big-o-analysis-banner.webp" alt="Time Complexity Graph" style="width: 100%; max-width: 700px; border-radius: 10px;">
+</p>
+
+### 📈 Axis Explanation:
+- **X-axis (n):** Input size (like number of elements in an array).
+- **Y-axis (T(n)):** Time complexity (how long the algorithm takes).
+
 ---
 
-> ✅ Keep practicing and visualizing algorithms to deeply understand time and space trade-offs!
+## 🟢 Graph Lines:
+1. `f(n)` – the actual time complexity of your algorithm.
+2. `g(n)` – a known function that bounds `f(n)` from above (a simpler function like `n`, `n²`, etc.).
+3. `c * g(n)` – a scaled version of `g(n)` to show that `f(n)` stays below it after a certain point (`n₀`).
+
+### The statement `f(n) = O(g(n))` means:  
+> "After a certain input size `n₀`, the time taken by `f(n)` will always be less than or equal to a constant multiple (`c`) of `g(n)`."
+
+---
+
+## 💡 Example: Linear Search
+
+Let’s say you’re searching for a number in an unsorted list.
+
+### Code Example:
+
+```python
+def linear_search(arr, target):
+    for num in arr:
+        if num == target:
+            return True
+    return False
+```
+
+- **Best Case:** Found at beginning → `O(1)`
+- **Worst Case:** Found at end or not at all → `O(n)`
+
+| Term       | Value   | Explanation                                      |
+|------------|---------|--------------------------------------------------|
+| `f(n)`     | 5n + 3  | Actual steps (loop body takes 5 units per item) |
+| `g(n)`     | n       | Linear function                                 |
+| `c * g(n)` | 6n      | Scaled upper bound (c = 6)                      |
+
+✅ After some point, `5n + 3 < 6n` → So `f(n) = O(n)`
+
+Here:
+- `f(n)` is the actual time to search.
+- We say `f(n) = O(n)` → Because time grows linearly with input size.
+
+---
+
+## 📌 Why It’s Important
+1. ✅ Helps choose the best algorithm for big input sizes.
+2. 🔍 Helps analyze performance without running the code.
+3. 🔁 Used to compare two or more solutions.
+
+---
+
+## 🧮 Common Big O Examples
+
+| Algorithm   | Big O    | Meaning                          |
+|-------------|----------|----------------------------------|
+| Constant    | O(1)     | Time doesn’t grow with input     |
+| Linear      | O(n)     | Time grows with input            |
+| Logarithmic | O(log n) | Very efficient (e.g., binary search) |
+| Quadratic   | O(n²)    | Slower for large inputs          |
+| Exponential | O(2ⁿ)    | Very slow, grows too fast        |
+
+---
