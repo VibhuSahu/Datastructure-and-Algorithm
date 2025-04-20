@@ -1,4 +1,6 @@
-# 1672
+# 1672. Richest Customer Wealth
+
+> [Link](https://leetcode.com/problems/richest-customer-wealth/description)
 
 
 ## Linear Search Algorithm
