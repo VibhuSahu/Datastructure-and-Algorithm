@@ -2,16 +2,20 @@ import java.util.Arrays;
 
 public class Main {
     /*
-     * @function name: Selection Sort Algorithm
+     * @function name: Cycle Sort Algorithm
      */
+    public static void CycleSortAlgo(int[] arr) {
+        int n = 0;
 
-    public static void selectionSort(int[] arr) {
-        int max;
-        for (int i = arr.length - 1; i > 0; i--) {
-            max = maxnum(arr, 0, i+1);
-            swap(arr, max, i);
-            
+        while( n < arr.length) {
+            int correct = arr[n] - 1;
+            if (arr[correct] != arr[n]) {
+                swap(arr, correct, n);
+            } else {
+                n++;
+            }
         }
+
     }
 
     public static void swap(int[] arr, int first, int second) {
@@ -20,21 +24,10 @@ public class Main {
         arr[second] = temp;
     }
 
-    public static int maxnum(int[] arr, int first, int second) {
-        int max = first;
-        for (int i = first; i < second; i++) {
-            if (arr[i] > arr[max]) {
-                max = i;
-            }
-        }
-        return max;
-    }
-
-
     public static void main(String[] args) {
-        int[] list = {-7,1,-8, 12, 32, 5, 16};
+        int[] list = {1,4,6,2,5,3};
 
-        selectionSort(list);
+        CycleSortAlgo(list);
 
         System.out.println("The array - " + Arrays.toString(list)); 
     }   
