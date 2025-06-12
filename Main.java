@@ -8,7 +8,7 @@ public class Main {
     }
     public static void main(String[] args) {
         
-        System.err.println(singleFiboNumber(6));
+        System.err.println(singleFiboNumber(0));
 
 
         
