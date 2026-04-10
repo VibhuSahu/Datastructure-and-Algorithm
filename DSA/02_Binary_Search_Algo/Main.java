@@ -39,7 +39,7 @@ public class Main {
         int start = 0;
         int end = arr.length - 1;
 
-        while(start <= end) {
+        while (start <= end) {
             int mid = (start + end) / 2;
 
             if (target < arr[mid]) {
@@ -52,6 +52,8 @@ public class Main {
         }
         return (start < arr.length) ? arr[start] : -1;
     }
+    
+    public static int InfiniteSearch(int[])
 
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 21, 22, 24, 27};
