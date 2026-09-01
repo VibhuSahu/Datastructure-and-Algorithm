@@ -53,7 +53,30 @@ public class Main {
         return (start < arr.length) ? arr[start] : -1;
     }
     
-    public static int InfiniteSearch(int[])
+    public static int InfiniteSearch(int[] arr, int target) {
+        int start = 0;
+        int end = 1;
+
+        while(true) {
+            if (arr[end] < target) {
+                start = end;
+                end = end * 2;
+                continue;
+            }
+
+            int mid = start + (end - start) / 2;
+
+            if (target < arr[mid]) {
+                end = mid - 1;
+            } else if (target > arr[mid]) {
+                start = mid + 1; 
+            } else {
+                return mid;
+            }
+
+            if (start > end) return -1;
+        }
+    }
 
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 21, 22, 24, 27};
@@ -68,6 +91,8 @@ public class Main {
 
         System.out.println("Ceiling of target: " + SearchCeilingValue(arr, target));
         System.out.println("Ceiling of example: " + SearchCeilingValue(arr, example));
+
+        System.out.println("Search Target In Infinite Array: " + InfiniteSearch(arr, target));
     }
 }
 
